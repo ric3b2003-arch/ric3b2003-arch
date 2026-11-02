@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HERA PRO-KOOL CLEANING | Nettoyage de bâtiments à Mimizan</title>
+<meta name="description" content="HERA PRO-KOOL CLEANING assure le nettoyage courant de bureaux, commerces et parties communes à Mimizan (Landes). Demandez un devis.">
+<style>
+  :root{
+    --pin:#0F3331;
+    --pin-2:#1A4F4A;
+    --brume:#EAF4F3;
+    --mer:#2A82A3;
+    --gant:#F6C21B;
+    --encre:#102120;
+    --fond:#F8FCFB;
+    --ligne:#C9DEDB;
+    --todo:#FFE69A;
+    --titre:"Avenir Next","Segoe UI Variable Display","Trebuchet MS",system-ui,sans-serif;
+    --texte:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--fond);color:var(--encre);font-family:var(--texte);font-size:1.0625rem;line-height:1.6}
+  h1,h2,h3{font-family:var(--titre);line-height:1.1;letter-spacing:-.02em;margin:0}
+  p{margin:0 0 1em;max-width:62ch}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--mer);outline-offset:3px}
+  .wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
+  .todo{background:var(--todo);padding:0 .3em;border-radius:3px;font-style:normal}
+
+  /* En-tête */
+  header{position:sticky;top:0;z-index:10;background:rgba(248,252,251,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+  .logo{font-family:var(--titre);font-weight:800;font-size:1.15rem;letter-spacing:-.01em;text-decoration:none;color:var(--pin)}
+  .logo span{font-weight:500;color:var(--mer)}
+  nav{display:flex;align-items:center;gap:1.4rem}
+  nav a{text-decoration:none;font-weight:500}
+  nav a:hover{text-decoration:underline;text-underline-offset:4px}
+  .btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;background:var(--gant);color:var(--encre);border:2px solid var(--gant);transition:background .15s}
+  .btn:hover{background:#ffd84d}
+  .btn.ghost{background:transparent;border-color:var(--pin);color:var(--pin)}
+  .btn.ghost:hover{background:var(--brume)}
+  @media (max-width:760px){nav a:not(.btn){display:none}}
+
+  /* Hero */
+  .hero{padding:clamp(2.5rem,6vw,5rem) 0}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);font-weight:800;color:var(--pin);margin-bottom:1.2rem}
+  .hero p.lead{font-size:1.2rem;color:#2B4543}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+
+  /* Avant / après : la vitre */
+  .ba{position:relative;aspect-ratio:6/5;border-radius:18px;overflow:hidden;border:6px solid var(--pin);background:#bcdde8;--p:50%;touch-action:pan-y;box-shadow:0 18px 40px -24px rgba(15,51,49,.6)}
+  .ba svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .grime{position:absolute;inset:0;clip-path:inset(0 0 0 var(--p));
+    background:
+      radial-gradient(circle at 18% 28%,rgba(84,72,52,.55) 0 7%,transparent 8%),
+      radial-gradient(circle at 70% 18%,rgba(84,72,52,.5) 0 9%,transparent 10%),
+      radial-gradient(circle at 40% 72%,rgba(84,72,52,.55) 0 11%,transparent 12%),
+      radial-gradient(circle at 86% 64%,rgba(84,72,52,.5) 0 8%,transparent 9%),
+      repeating-linear-gradient(98deg,rgba(70,62,48,.16) 0 2px,transparent 2px 11px),
+      rgba(120,110,88,.5);
+    backdrop-filter:blur(3px) saturate(.55)}
+  .ba .handle{position:absolute;top:0;bottom:0;left:var(--p);width:4px;margin-left:-2px;background:var(--gant);pointer-events:none}
+  .ba .handle::after{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--gant);border:4px solid var(--pin);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+  .ba:focus-within{outline:3px solid var(--mer);outline-offset:3px}
+  .tag{position:absolute;bottom:12px;padding:.25rem .7rem;border-radius:999px;font-weight:700;font-size:.9rem;pointer-events:none}
+  .tag.apres{left:12px;background:#fff;color:var(--pin)}
+  .tag.avant{right:12px;background:var(--pin);color:#fff}
+  .hint{font-size:.95rem;color:#476563;margin:.8rem 0 0}
+
+  /* Sections */
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:800;color:var(--pin);margin-bottom:1rem}
+  .intro{color:#2B4543;margin-bottom:2.2rem}
+
+  .services{background:var(--brume)}
+  .liste{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 3rem}
+  .liste article{border-top:3px solid var(--pin);padding-top:1rem}
+  .liste h3{font-size:1.35rem;margin-bottom:.5rem;color:var(--pin)}
+  .liste p{margin:0;color:#2B4543}
+  @media (max-width:760px){.liste{grid-template-columns:1fr}}
+
+  .methode ol{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;counter-reset:etape}
+  .methode li{counter-increment:etape;position:relative;padding:1.2rem 1.2rem 1.2rem 1.2rem;background:#fff;border:1px solid var(--ligne);border-radius:14px}
+  .methode li::before{content:counter(etape);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--pin);color:#fff;font-family:var(--titre);font-weight:800;margin-bottom:.8rem}
+  .methode h3{font-size:1.2rem;margin-bottom:.4rem}
+  .methode li p{margin:0;font-size:1rem;color:#2B4543}
+  @media (max-width:980px){.methode ol{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.methode ol{grid-template-columns:1fr}}
+
+  .liste .large{grid-column:1/-1;background:var(--pin);color:#EAF4F3;border-top:0;border-radius:14px;padding:1.6rem}
+  .liste .large h3{color:#fff}
+  .liste .large p{color:#D5E8E5;max-width:70ch}
+  .liste .large p + p{margin-top:.8em}
+
+  .galerie .grille-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+  .galerie figure{margin:0}
+  .galerie .cadre{aspect-ratio:4/3;border:2px dashed var(--ligne);border-radius:12px;background:var(--brume);display:grid;place-items:center;color:#476563;font-weight:600}
+  .galerie figcaption{margin-top:.5rem;font-size:.95rem;color:#476563}
+  @media (max-width:760px){.galerie .grille-photos{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.galerie .grille-photos{grid-template-columns:1fr}}
+
+  .societe{background:var(--pin);color:#EAF4F3}
+  .societe h2{color:#fff}
+  .societe p{color:#D5E8E5}
+  .societe .faits{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+  .societe .faits div{border-left:4px solid var(--gant);padding-left:1rem}
+  .societe .faits strong{display:block;font-family:var(--titre);font-size:1.6rem;color:#fff;margin-bottom:.2rem}
+  @media (max-width:760px){.societe .faits{grid-template-columns:1fr}}
+
+  .contact .grille{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem)}
+  .coord{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:1.6rem}
+  .coord dl{margin:0}
+  .coord dt{font-weight:700;color:var(--pin);margin-top:1rem}
+  .coord dt:first-child{margin-top:0}
+  .coord dd{margin:.15rem 0 0}
+  @media (max-width:760px){.contact .grille{grid-template-columns:1fr}}
+
+  footer{border-top:1px solid var(--ligne);padding:2rem 0;font-size:.95rem;color:#476563}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem}
+
+  .legal{background:var(--brume)}
+  .legal h2{font-size:1.7rem}
+  .legal h3{font-size:1.1rem;margin:1.4rem 0 .3rem;color:var(--pin)}
+  .legal p{margin-bottom:.4rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#haut">HERA PRO<span>-KOOL CLEANING</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#methode">Comment ça marche</a>
+      <a href="#contact" class="btn">Demander un devis</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+
+  <section class="hero" aria-labelledby="titre-hero">
+    <div class="wrap">
+      <div>
+        <h1 id="titre-hero">Des locaux nets, un travail soigné à Mimizan.</h1>
+        <p class="lead">HERA PRO-KOOL CLEANING assure le nettoyage de bureaux, de commerces, de parties communes et de logements à Mimizan et dans les environs.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Demander un devis</a>
+          <a class="btn ghost" href="#services">Voir nos services</a>
+        </div>
+      </div>
+      <div>
+        <div class="ba" id="ba">
+          <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Vue sur la forêt de pins et l'océan à travers une vitre">
+            <defs>
+              <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9ED3E6"/><stop offset="1" stop-color="#E6F5F7"/>
+              </linearGradient>
+              <linearGradient id="mer" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2A82A3"/><stop offset="1" stop-color="#1B5F7C"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="500" fill="url(#ciel)"/>
+            <circle cx="440" cy="150" r="46" fill="#FFF4C4"/>
+            <rect y="290" width="600" height="90" fill="url(#mer)"/>
+            <path d="M0 380 Q150 340 300 372 T600 360 V500 H0Z" fill="#E8D9AE"/>
+            <g fill="#0F3331">
+              <path d="M70 420 L110 250 L150 420Z"/><path d="M95 350 L110 210 L125 350Z"/>
+              <path d="M150 440 L200 290 L250 440Z"/><path d="M175 380 L200 250 L225 380Z"/>
+              <path d="M470 430 L520 270 L570 430Z"/><path d="M495 370 L520 235 L545 370Z"/>
+            </g>
+            <path d="M0 440 Q200 410 400 440 T600 430 V500 H0Z" fill="#1A4F4A"/>
+            <g stroke="#F8FCFB" stroke-width="10" opacity=".9"><path d="M300 0 V500"/><path d="M0 250 H600"/></g>
+          </svg>
+          <div class="grime" aria-hidden="true"></div>
+          <div class="handle" aria-hidden="true"></div>
+          <span class="tag apres" aria-hidden="true">Après</span>
+          <span class="tag avant" aria-hidden="true">Avant</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparer une vitre avant et après nettoyage">
+        </div>
+        <p class="hint">Faites glisser pour passer la raclette.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- À VALIDER avec l'entreprise : liste des services -->
+  <section class="services" id="services" aria-labelledby="titre-services">
+    <div class="wrap">
+      <h2 id="titre-services">Ce que nous nettoyons</h2>
+      <p class="intro">Notre métier : le nettoyage courant des bâtiments, pour les professionnels et les collectivités.</p>
+      <div class="liste">
+        <article>
+          <h3>Bureaux et locaux professionnels</h3>
+          <p>Sols, postes de travail, sanitaires, espaces de pause : un entretien régulier pour travailler dans de bonnes conditions.</p>
+        </article>
+        <article>
+          <h3>Commerces et surfaces de vente</h3>
+          <p>Vitrines, sols, cabines et réserves, avec des passages adaptés à vos horaires d'ouverture.</p>
+        </article>
+        <article>
+          <h3>Parties communes d'immeubles</h3>
+          <p>Halls, escaliers, ascenseurs et couloirs de résidences et de copropriétés.</p>
+        </article>
+        <article>
+          <h3>Nettoyages ponctuels</h3>
+          <p>Remise en état avant une ouverture, après des travaux ou en fin de saison.</p>
+        </article>
+        <article class="large">
+          <h3>Logements encombrés et syndrome de Diogène</h3>
+          <p>Nous intervenons dans les logements très encombrés ou insalubres : tri, évacuation, nettoyage et remise en état, pour retrouver un lieu sain et habitable.</p>
+          <p>Chaque situation est traitée avec discrétion et sans jugement, en lien avec la personne, sa famille ou son représentant.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie" id="realisations" aria-labelledby="titre-galerie">
+    <div class="wrap">
+      <h2 id="titre-galerie">Nos réalisations</h2>
+      <p class="intro">Quelques exemples de lieux que nous avons remis en état.</p>
+      <div class="grille-photos">
+        <!-- À REMPLACER par de vraies photos : <img src="photos/nom.jpg" alt="description"> dans chaque .cadre -->
+        <figure><div class="cadre">Photo à venir</div><figcaption><span class="todo">légende à compléter</span></figcaption></figure>
+        <figure><div class="cadre">Photo à venir</div><figcaption><span class="todo">légende à compléter</span></figcaption></figure>
+        <figure><div class="cadre">Photo à venir</div><figcaption><span class="todo">légende à compléter</span></figcaption></figure>
+        <figure><div class="cadre">Photo à venir</div><figcaption><span class="todo">légende à compléter</span></figcaption></figure>
+        <figure><div class="cadre">Photo à venir</div><figcaption><span class="todo">légende à compléter</span></figcaption></figure>
+        <figure><div class="cadre">Photo à venir</div><figcaption><span class="todo">légende à compléter</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="methode" id="methode" aria-labelledby="titre-methode">
+    <div class="wrap">
+      <h2 id="titre-methode">Comment se déroule une intervention</h2>
+      <ol>
+        <li>
+          <h3>Premier contact</h3>
+          <p>Un appel ou un message pour nous décrire votre besoin.</p>
+        </li>
+        <li>
+          <h3>Visite sur place</h3>
+          <p>Notre responsable se déplace pour prendre les mesures et échanger avec vous sur vos attentes.</p>
+        </li>
+        <li>
+          <h3>Signature du contrat</h3>
+          <p>Le contrat vous est envoyé et se signe en ligne, par signature électronique.</p>
+        </li>
+        <li>
+          <h3>Intervention</h3>
+          <p>Nous intervenons selon le planning convenu ensemble.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="societe" aria-labelledby="titre-societe">
+    <div class="wrap">
+      <h2 id="titre-societe">Une entreprise installée à Mimizan</h2>
+      <p>HERA PRO-KOOL CLEANING est l'enseigne de l'établissement de Mimizan de la société HERA PRO START CLEANING.</p>
+      <div class="faits">
+        <div><strong>Depuis 2010</strong>La société HERA PRO START CLEANING existe depuis le 1<sup>er</sup> avril 2010.</div>
+        <div><strong>Depuis 2016</strong>Notre établissement de Mimizan est ouvert depuis le 10 février 2016.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="titre-contact">
+    <div class="wrap grille">
+      <div>
+        <h2 id="titre-contact">Parlons de vos locaux</h2>
+        <p>Décrivez-nous votre besoin : notre responsable vous recontacte pour organiser une visite sur place.</p>
+        <div class="actions">
+          <a class="btn" href="tel:+33611503644">Appeler</a>
+          <a class="btn ghost" href="mailto:contact40@herapro.fr">Envoyer un e-mail</a>
+        </div>
+      </div>
+      <div class="coord">
+        <dl>
+          <dt>Adresse</dt>
+          <dd>HERA PRO-KOOL CLEANING<br>14 rue de l'Abbaye<br>40200 Mimizan</dd>
+          <dt>Téléphone</dt>
+          <dd><a href="tel:+33611503644">06 11 50 36 44</a></dd>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:contact40@herapro.fr">contact40@herapro.fr</a></dd>
+          <dt>Horaires</dt>
+          <dd>Lundi au jeudi : 8h à 12h et 14h à 17h<br>Vendredi : 8h à 12h et 14h à 16h</dd>
+          <dt>Zone d'intervention</dt>
+          <dd>Mimizan et sa région, dans un rayon de 40 km autour de notre établissement. Déplacements au-delà étudiés sur demande.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentions légales masquées : retirer l'attribut hidden ici et sur le lien du pied de page pour les réafficher -->
+  <section class="legal" id="mentions" aria-labelledby="titre-mentions" hidden>
+    <div class="wrap">
+      <h2 id="titre-mentions">Mentions légales</h2>
+
+      <h3>Éditeur du site</h3>
+      <p>HERA PRO START CLEANING, société à responsabilité limitée, exerçant sous l'enseigne HERA PRO-KOOL CLEANING.</p>
+      <p>Capital social : <span class="todo">à compléter</span></p>
+      <p>Siège social : <span class="todo">à compléter</span></p>
+      <p>Établissement de Mimizan : 14 rue de l'Abbaye, 40200 Mimizan</p>
+      <p>SIREN : 521 354 282. SIRET de l'établissement : 521 354 282 00027.</p>
+      <p>Immatriculation au RCS : <span class="todo">à compléter</span></p>
+      <p>N° de TVA intracommunautaire : <span class="todo">à compléter</span></p>
+      <p>Directeur de la publication : <span class="todo">à compléter</span></p>
+      <p>Contact : <a href="mailto:contact40@herapro.fr">contact40@herapro.fr</a>, 06 11 50 36 44</p>
+
+      <h3>Hébergeur</h3>
+      <p><span class="todo">Nom, adresse et téléphone de l'hébergeur, à compléter</span></p>
+
+      <h3>Données personnelles et cookies</h3>
+      <p>Ce site ne comporte ni formulaire, ni outil de mesure d'audience, ni cookie, et n'utilise aucune police ou ressource hébergée par un tiers. Les informations que vous nous transmettez par téléphone ou par e-mail servent uniquement à répondre à votre demande. Vous pouvez demander leur accès, leur rectification ou leur suppression en nous écrivant à l'adresse indiquée ci-dessus.</p>
+
+      <h3>Propriété intellectuelle</h3>
+      <p>Les textes, logos et images de ce site appartiennent à leur propriétaire respectif. Toute reproduction sans autorisation est interdite.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>HERA PRO-KOOL CLEANING, 14 rue de l'Abbaye, 40200 Mimizan</span>
+    <span>SIRET 521 354 282 00027 <a href="#mentions" hidden>Mentions légales</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var box=document.getElementById('ba');
+    if(!box) return;
+    var input=box.querySelector('input');
+    function maj(){box.style.setProperty('--p',input.value+'%');}
+    input.addEventListener('input',maj);
+    maj();
+  })();
+</script>
+</body>
+</html>
